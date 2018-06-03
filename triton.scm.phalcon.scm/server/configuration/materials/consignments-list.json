@@ -1,0 +1,7 @@
+[
+  {"name":"company_name", "label":"Company Name", "order":"1", "type":"text"}
+  ,{"name":"address", "label":"Address", "order":"2", "type":"text"}
+  ,{"name":"city", "label":"City", "order":"3", "type":"text"}
+  ,{"name":"state", "label":"State", "order":"4", "type":"text"}
+  ,{"name":"phones", "label":"Phone", "order":"5", "type":"text"}
+]

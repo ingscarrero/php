@@ -1,0 +1,935 @@
+[
+  {
+    "type": "group", "name":"", "label":"", "order":"1", "cssClass": "size-p-33 row1"
+    , "children": [
+      {"type":"text", "name":"name", "label":"Name", "required":"required", "order":"1", "cssClass": "size-p-100"}
+      ,{"type":"text", "name":"sku", "label":"SKU", "required":"", "order":"2", "cssClass": "size-p-50"}
+      ,{"type":"select", "name":"kind", "label":"Kind", "required":"required", "order":"3", "cssClass": "size-p-50", "options":[
+          {"value":"stock", "label":"Stock"}
+          ,{"value":"non-stock", "label":"Non Stock"}
+      ]}
+      ,{"type":"textarea", "name":"altName", "label":"Alternate Name", "required":"required", "order":"4", "cssClass": "size-p-100"}
+    ]
+  }
+  , {
+    "type": "group", "name":"", "label":"", "order":"2", "cssClass": "size-p-33 row1"
+    , "children": [
+      {"type":"select", "name":"type", "label":"Type / Form", "required":"required", "order":"1", "cssClass": "size-p-50", "options":[
+        {"value":"1", "label":"SLAB"}
+        ,{"value":"2", "label":"VANITIES"}
+        ,{"value":"3", "label":"TILE"}
+        ,{"value":"4", "label":"SINKS"}
+        ,{"value":"5", "label":"COMMERCIAL"}
+        ,{"value":"6", "label":"COMPAC"}
+        ,{"value":"7", "label":"DANZE"}
+        ,{"value":"8", "label":"ELKAY"}
+        ,{"value":"9", "label":"GROHE"}
+        ,{"value":"10", "label":"JACUZZI"}
+        ,{"value":"11", "label":"OTHER"}
+        ,{"value":"12", "label":"SUPPLIES"}
+        ,{"value":"13", "label":"TOTO"}
+        ,{"value":"14", "label":"LABOR"}
+      ]}
+      ,{"type":"select", "name":"baseColors", "label":"Base Colors", "required":"required", "order":"2", "cssClass": "size-p-50", "options":[
+        {"value":"14", "label":"Aqua"}
+        ,{"value":"15", "label":"Black"}
+        ,{"value":"16", "label":"Beige"}
+        ,{"value":"17", "label":"Blue"}
+        ,{"value":"18", "label":"Bronze"}
+        ,{"value":"19", "label":"Brown"}
+        ,{"value":"20", "label":"Burgundy"}
+        ,{"value":"21", "label":"Copper"}
+        ,{"value":"22", "label":"Cream"}
+        ,{"value":"23", "label":"Gold"}
+        ,{"value":"24", "label":"Gray"}
+        ,{"value":"25", "label":"Honey"}
+        ,{"value":"26", "label":"Multi"}
+        ,{"value":"27", "label":"Off-White"}
+        ,{"value":"28", "label":"Crimson"}
+        ,{"value":"29", "label":"Peach"}
+        ,{"value":"30", "label":"Pink"}
+        ,{"value":"31", "label":"Purple"}
+        ,{"value":"32", "label":"Red"}
+        ,{"value":"33", "label":"Silver"}
+        ,{"value":"34", "label":"Taupe"}
+        ,{"value":"35", "label":"White"}
+        ,{"value":"36", "label":"Yellow"}
+        ,{"value":"37", "label":"Deep Purple"}
+        ,{"value":"38", "label":"Royal Blue"}
+        ,{"value":"39", "label":"Green"}
+        ,{"value":"40", "label":"Dark Red"}
+        ,{"value":"41", "label":"Mute Red"}
+        ,{"value":"42", "label":"Coral"}
+        ,{"value":"43", "label":"Sea Green"}
+        ,{"value":"44", "label":"Light Blue"}
+        ,{"value":"45", "label":"Mute sea green"}
+        ,{"value":"46", "label":"Dark Green"}
+        ,{"value":"47", "label":"Dark Blue"}
+        ,{"value":"48", "label":"light Green"}
+        ,{"value":"49", "label":"Mute green"}
+        ,{"value":"50", "label":"Mute Yellow"}
+        ,{"value":"51", "label":"Light Orange"}
+        ,{"value":"52", "label":"Orange"}
+        ,{"value":"53", "label":"Almond"}
+        ,{"value":"54", "label":"BLACK/ GOLD"}
+        ,{"value":"55", "label":"BLACK/BLUE"}
+        ,{"value":"56", "label":"Cotton"}
+        ,{"value":"57", "label":"Crystal"}
+        ,{"value":"58", "label":"Dark Espresso"}
+        ,{"value":"59", "label":"Gala Beige"}
+        ,{"value":"60", "label":"Light Gold"}
+        ,{"value":"61", "label":"Oil Rubbed Bronze"}
+      ]}
+      ,{"type":"select", "name":"category", "label":"Category / Nature", "required":"required", "order":"3", "cssClass": "size-p-50", "options":[
+        {"value":"62", "label":"Air Tool"}
+        ,{"value":"63", "label":"Aquatic"}
+        ,{"value":"64", "label":"Back Pad"}
+        ,{"value":"65", "label":"Bathtubs"}
+        ,{"value":"66", "label":"Blanco"}
+        ,{"value":"67", "label":"Bonding Agent"}
+        ,{"value":"68", "label":"Bridge Saw Blades"}
+        ,{"value":"69", "label":"California Faucets"}
+        ,{"value":"70", "label":"Carpet"}
+        ,{"value":"71", "label":"Caulk"}
+        ,{"value":"72", "label":"Chemical"}
+        ,{"value":"73", "label":"Cifial"}
+        ,{"value":"74", "label":"CNC Tools"}
+        ,{"value":"75", "label":"Colorant"}
+        ,{"value":"76", "label":"Compac Marmol"}
+        ,{"value":"77", "label":"Compac Quartz"}
+        ,{"value":"78", "label":"Core Bit"}
+        ,{"value":"79", "label":"Countertop Support"}
+        ,{"value":"80", "label":"Cup Wheel"}
+        ,{"value":"81", "label":"Dakota"}
+        ,{"value":"82", "label":"Danze"}
+        ,{"value":"83", "label":"Delta"}
+        ,{"value":"84", "label":"Dry Pad"}
+        ,{"value":"85", "label":"Elkay"}
+        ,{"value":"86", "label":"Exotic"}
+        ,{"value":"87", "label":"Fairmont Designs"}
+        ,{"value":"88", "label":"Faucet"}
+        ,{"value":"89", "label":"Gerber"}
+        ,{"value":"90", "label":"Glue"}
+        ,{"value":"91", "label":"Granite"}
+        ,{"value":"92", "label":"Grinding Stone"}
+        ,{"value":"93", "label":"Grohe"}
+        ,{"value":"94", "label":"Grout"}
+        ,{"value":"95", "label":"Hardwood"}
+        ,{"value":"96", "label":"Installation Products"}
+        ,{"value":"97", "label":"Jacuzzi"}
+        ,{"value":"98", "label":"Jason"}
+        ,{"value":"99", "label":"JB Signature"}
+        ,{"value":"100", "label":"Kitchen Aid"}
+        ,{"value":"101", "label":"Kohler"}
+        ,{"value":"102", "label":"LABOR"}
+        ,{"value":"103", "label":"Limestone"}
+        ,{"value":"104", "label":"Link-a-sink"}
+        ,{"value":"105", "label":"Marble"}
+        ,{"value":"106", "label":"Masterpiece Sinks"}
+        ,{"value":"107", "label":"Material Handling"}
+        ,{"value":"108", "label":"Misc Sink"}
+        ,{"value":"109", "label":"Mountain Plumbing"}
+        ,{"value":"110", "label":"Oceana"}
+        ,{"value":"111", "label":"Oliveri"}
+        ,{"value":"112", "label":"ONYX"}
+        ,{"value":"113", "label":"Polishing Wheel"}
+        ,{"value":"114", "label":"Power Tools"}
+        ,{"value":"115", "label":"Quartzite"}
+        ,{"value":"116", "label":"Ragno"}
+        ,{"value":"117", "label":"Rohl"}
+        ,{"value":"118", "label":"Router Bit"}
+        ,{"value":"119", "label":"Safety Supplies"}
+        ,{"value":"120", "label":"Samsung Quartz"}
+        ,{"value":"121", "label":"Sandpaper"}
+        ,{"value":"122", "label":"Sandstone"}
+        ,{"value":"123", "label":"Santec"}
+        ,{"value":"124", "label":"Sink"}
+        ,{"value":"125", "label":"Slate"}
+        ,{"value":"126", "label":"Small Blades"}
+        ,{"value":"127", "label":"Soap Stone"}
+        ,{"value":"128", "label":"Soapstone"}
+        ,{"value":"129", "label":"Specialty Tool"}
+        ,{"value":"130", "label":"Switchplate"}
+        ,{"value":"131", "label":"Thompson Traders"}
+        ,{"value":"132", "label":"Tile"}
+        ,{"value":"133", "label":"Toilet"}
+        ,{"value":"134", "label":"Toilet Seats &amp; Washlets"}
+        ,{"value":"135", "label":"TOTO"}
+        ,{"value":"136", "label":"Travertine"}
+        ,{"value":"137", "label":"Vanities"}
+        ,{"value":"138", "label":"Vinyl"}
+        ,{"value":"139", "label":"Wearables"}
+        ,{"value":"140", "label":"Wet Pad"}
+        ,{"value":"141", "label":"Wood Flooring"}
+        ,{"value":"142", "label":"Misc Supplies"}
+        ,{"value":"143", "label":"Emser"}
+        ,{"value":"144", "label":"Soho"}
+        ,{"value":"145", "label":"Elysium"}
+        ,{"value":"146", "label":"Soft Quartzite"}
+        ,{"value":"147", "label":"Crystal"}
+        ,{"value":"148", "label":"Other"}
+      ]}
+      ,{"type":"select", "name":"origin", "label":"Origin", "required":"required", "order":"4", "cssClass": "size-p-50", "options":[
+        {"value":"1", "label":"Afghanistan"}
+        ,{"value":"2", "label":"Africa"}
+        ,{"value":"3", "label":"Algeria"}
+        ,{"value":"4", "label":"Angola"}
+        ,{"value":"5", "label":"Austria"}
+        ,{"value":"6", "label":"Belgium"}
+        ,{"value":"7", "label":"Brazil"}
+        ,{"value":"8", "label":"Bulgaria"}
+        ,{"value":"9", "label":"Canada"}
+        ,{"value":"10", "label":"Chile"}
+        ,{"value":"11", "label":"China"}
+        ,{"value":"12", "label":"Colombia"}
+        ,{"value":"13", "label":"Croatia"}
+        ,{"value":"14", "label":"Cuba"}
+        ,{"value":"15", "label":"Czechoslovakia"}
+        ,{"value":"16", "label":"Ecuador"}
+        ,{"value":"17", "label":"Egypt"}
+        ,{"value":"18", "label":"England"}
+        ,{"value":"19", "label":"Ethiopia"}
+        ,{"value":"20", "label":"Finland"}
+        ,{"value":"21", "label":"France"}
+        ,{"value":"22", "label":"Germany"}
+        ,{"value":"23", "label":"Greece"}
+        ,{"value":"24", "label":"Guatemala"}
+        ,{"value":"25", "label":"Honduras "}
+        ,{"value":"26", "label":"Hong Kong"}
+        ,{"value":"27", "label":"India"}
+        ,{"value":"28", "label":"Indonesia"}
+        ,{"value":"29", "label":"Iran"}
+        ,{"value":"30", "label":"Ireland"}
+        ,{"value":"31", "label":"Israel "}
+        ,{"value":"32", "label":"Italy"}
+        ,{"value":"33", "label":"Japan "}
+        ,{"value":"34", "label":"Jordan"}
+        ,{"value":"35", "label":"Kenya"}
+        ,{"value":"36", "label":"Korea"}
+        ,{"value":"37", "label":"Lebanon"}
+        ,{"value":"38", "label":"Malaysia"}
+        ,{"value":"39", "label":"Mexico"}
+        ,{"value":"40", "label":"Mongolia"}
+        ,{"value":"41", "label":"Morocco"}
+        ,{"value":"42", "label":"Netherlands (Holland)"}
+        ,{"value":"43", "label":"New Zealand"}
+        ,{"value":"44", "label":"Norway"}
+        ,{"value":"45", "label":"Oman"}
+        ,{"value":"46", "label":"Pakistan"}
+        ,{"value":"47", "label":"Palestine"}
+        ,{"value":"48", "label":"Peru "}
+        ,{"value":"49", "label":"Philippines"}
+        ,{"value":"50", "label":"Portugal"}
+        ,{"value":"51", "label":"Ghana"}
+        ,{"value":"52", "label":"Jamaica"}
+        ,{"value":"53", "label":"Libya"}
+        ,{"value":"54", "label":"Puerto Rico"}
+        ,{"value":"55", "label":"Saudi Arabia"}
+        ,{"value":"56", "label":"Serbia "}
+        ,{"value":"57", "label":"Singapore"}
+        ,{"value":"58", "label":"South Africa"}
+        ,{"value":"59", "label":"Spain"}
+        ,{"value":"60", "label":"Sri Lanka"}
+        ,{"value":"61", "label":"Sweden"}
+        ,{"value":"62", "label":"Switzerland"}
+        ,{"value":"63", "label":"Taiwan"}
+        ,{"value":"64", "label":"Thailand"}
+        ,{"value":"65", "label":"Tunisia"}
+        ,{"value":"66", "label":"Turkey"}
+        ,{"value":"67", "label":"Ukraine"}
+        ,{"value":"68", "label":"United Arab Emirates"}
+        ,{"value":"69", "label":"United States"}
+        ,{"value":"70", "label":"Venezuela "}
+        ,{"value":"71", "label":"Vietnam"}
+        ,{"value":"72", "label":"Yugoslavia"}
+        ,{"value":"73", "label":"Argentina"}
+      ]}
+      ,{"type":"select", "name":"subcategory", "label":"Sub Category", "required":"required", "order":"5", "cssClass": "size-p-50", "options":[
+          {"value":"0", "label":"-"}
+      ]}
+      ,{"type":"select", "name":"thickness", "label":"Thickness", "required":"required", "order":"6", "cssClass": "size-p-50", "options":[
+          {"value":"149", "label":"1 cm"}
+      ]}
+      ,{"type":"select", "name":"group", "label":"Group", "required":"required", "order":"7", "cssClass": "size-p-50", "options":[
+        {"value":"150", "label":"Staples"}
+        ,{"value":"151", "label":"Premium"}
+        ,{"value":"152", "label":"Semi-precious"}
+        ,{"value":"153", "label":"Exotics"}
+        ,{"value":"154", "label":"Special Order"}
+        ,{"value":"155", "label":"landscape"}
+      ]}
+      ,{"type":"text", "name":"series", "label":"Series Name", "required":"required", "order":"8", "cssClass": "size-p-50"}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"", "order":"3", "cssClass": "size-p-33 last row1"
+    , "children": [
+      {"type":"select", "name":"uomGroup", "label":"UOM Group", "required":"", "order":"1", "cssClass": "size-p-100", "options":[
+          {"value":"0", "label":"-"}
+      ]}
+      ,{"type":"select", "name":"units", "label":"Units of Measure", "required":"required", "order":"2", "cssClass": "size-p-50", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"text", "name":"weight", "label":"Weight", "required":"required", "order":"3", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"size", "label":"Size", "required":"required", "order":"4", "cssClass": "size-p-20"}
+      ,{"type":"checkbox", "name":"isIndivisible", "label":"This product is Indivisible (Each detail line of this product received in a supplier packing list cannot be partially sold)", "required":"", "order":"5", "cssClass": "size-p-100"}
+      ,{"type":"checkbox", "name":"isManufactured", "label":"This product is manufactured and not purchased from a supplier.", "required":"", "order":"6", "cssClass": "size-p-100"}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Selling Prices", "order":"4", "cssClass": "size-p-20 row2"
+    , "children": [
+      {"type":"text", "name":"price1", "label":"Price 1", "required":"", "order":"1", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"price2", "label":"Price 2", "required":"", "order":"2", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"price3", "label":"Price 3", "required":"", "order":"3", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"price4", "label":"Price 4", "required":"", "order":"4", "cssClass": "size-p-30"}
+      ,{"type":"select", "name":"priceRange", "label":"Price Range", "required":"required", "order":"5", "cssClass": "size-p-100", "options":[
+          {"value":"168", "label":"Very Low"}
+          ,{"value":"169", "label":"Low"}
+          ,{"value":"170", "label":"Medium"}
+          ,{"value":"171", "label":"High"}
+          ,{"value":"172", "label":"Very High"}
+      ]}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Default Affected Accounts", "order":"5", "cssClass": "size-p-26 row2"
+    , "children": [
+      {"type":"select", "name":"invAccount", "label":"GL Inventory Link Account", "required":"required", "order":"1", "cssClass": "size-p-100", "options":[
+        {"value":"173", "label":"1400-Inventory Asset"}
+        ,{"value":"174", "label":"1410-Inventory in Transit"}
+        ,{"value":"175", "label":"1425-Inventory on Transfer"}
+        ,{"value":"176", "label":"1450-Prepaid Freight"}
+        ,{"value":"177", "label":"1460-Inventory Write Down Adjustment"}
+      ]}
+      ,{"type":"select", "name":"incomeAccount", "label":"GL Income Account", "required":"required", "order":"2", "cssClass": "size-p-100", "options":[
+        {"value":"178", "label":"4000-Sales"}
+        ,{"value":"179", "label":"4100-Other Income"}
+        ,{"value":"180", "label":"4200-Delivery Income"}
+        ,{"value":"181", "label":"4300-Restocking Fees"}
+        ,{"value":"182", "label":"4400-Sales Discounts Allowed"}
+      ]}
+      ,{"type":"select", "name":"costAccount", "label":"GL Cost Of Goods Sold Account", "required":"required", "order":"3", "cssClass": "size-p-100", "options":[
+        {"value":"183", "label":"5000-CGS - Inventory"}
+        ,{"value":"184", "label":"5100-CGS - Inventory Adjustments"}
+        ,{"value":"185", "label":"5300-CGS - Freight"}
+        ,{"value":"186", "label":"5400-CGS - Other Purchase Costs"}
+        ,{"value":"187", "label":"5500-CGS - Purch/Quality Discounts"}
+      ]}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Reorder Levels", "order":"6", "cssClass": "size-p-20 row2"
+    , "children": [
+      {"type":"text", "name":"safetyStock", "label":"Safety Stock", "required":"", "order":"1", "cssClass": "size-p-70"}
+      ,{"type":"text", "name":"safetyStock2", "label":"-", "required":"", "order":"2", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"reorderQty", "label":"Reorder Qty", "required":"", "order":"3", "cssClass": "size-p-70"}
+      ,{"type":"text", "name":"reorderQty2", "label":"-", "required":"", "order":"4", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"leadTime", "label":"Lead Time", "required":"", "order":"5", "cssClass": "size-p-70"}
+      ,{"type":"select", "name":"bin", "label":"Assigned Bin / A Frame", "required":"", "order":"6", "cssClass": "size-p-100", "options":[
+        {"value":"188", "label":"Sam"}
+        ,{"value":"189", "label":"Mauro"}
+        ,{"value":"190", "label":"East Coast"}
+        ,{"value":"191", "label":"FTM W/H"}
+        ,{"value":"192", "label":"Marcio"}
+        ,{"value":"193", "label":"Andres"}
+        ,{"value":"194", "label":"Manny"}
+        ,{"value":"195", "label":"A1"}
+        ,{"value":"196", "label":"A2"}
+        ,{"value":"197", "label":"A3"}
+        ,{"value":"198", "label":"A4"}
+        ,{"value":"199", "label":"A5"}
+        ,{"value":"200", "label":"A6"}
+        ,{"value":"201", "label":"A7"}
+        ,{"value":"202", "label":"A8"}
+        ,{"value":"203", "label":"A9"}
+        ,{"value":"204", "label":"A10"}
+        ,{"value":"205", "label":"A11"}
+        ,{"value":"206", "label":"A12"}
+        ,{"value":"207", "label":"B1"}
+        ,{"value":"208", "label":"B2"}
+        ,{"value":"209", "label":"B3"}
+        ,{"value":"210", "label":"B4"}
+        ,{"value":"211", "label":"B5"}
+        ,{"value":"212", "label":"B6"}
+        ,{"value":"213", "label":"B7"}
+        ,{"value":"214", "label":"B8"}
+        ,{"value":"215", "label":"B9"}
+        ,{"value":"216", "label":"B10"}
+        ,{"value":"217", "label":"B11"}
+        ,{"value":"218", "label":"B12"}
+        ,{"value":"219", "label":"C1"}
+        ,{"value":"220", "label":"C2"}
+        ,{"value":"221", "label":"C3"}
+        ,{"value":"222", "label":"C4"}
+        ,{"value":"223", "label":"C5"}
+        ,{"value":"224", "label":"C6"}
+        ,{"value":"225", "label":"C7"}
+        ,{"value":"226", "label":"C8"}
+        ,{"value":"227", "label":"C9"}
+        ,{"value":"228", "label":"C10"}
+        ,{"value":"229", "label":"C11"}
+        ,{"value":"230", "label":"C12"}
+        ,{"value":"231", "label":"D1"}
+        ,{"value":"232", "label":"D2"}
+        ,{"value":"233", "label":"D3"}
+        ,{"value":"234", "label":"D4"}
+        ,{"value":"235", "label":"D5"}
+        ,{"value":"236", "label":"D6"}
+        ,{"value":"237", "label":"D7"}
+        ,{"value":"238", "label":"D8"}
+        ,{"value":"239", "label":"D9"}
+        ,{"value":"240", "label":"D10"}
+        ,{"value":"241", "label":"D11"}
+        ,{"value":"242", "label":"D12"}
+        ,{"value":"243", "label":"E1"}
+        ,{"value":"244", "label":"E2"}
+        ,{"value":"245", "label":"E3"}
+        ,{"value":"246", "label":"E4"}
+        ,{"value":"247", "label":"E5"}
+        ,{"value":"248", "label":"E6"}
+        ,{"value":"249", "label":"E7"}
+        ,{"value":"250", "label":"E8"}
+        ,{"value":"251", "label":"E9"}
+        ,{"value":"252", "label":"E10"}
+        ,{"value":"253", "label":"E11"}
+        ,{"value":"254", "label":"E12"}
+        ,{"value":"255", "label":"F1"}
+        ,{"value":"256", "label":"F2"}
+        ,{"value":"257", "label":"F3"}
+        ,{"value":"258", "label":"F4"}
+        ,{"value":"259", "label":"F5"}
+        ,{"value":"260", "label":"F6"}
+        ,{"value":"261", "label":"F7"}
+        ,{"value":"262", "label":"F8"}
+        ,{"value":"263", "label":"F9"}
+        ,{"value":"264", "label":"F10"}
+        ,{"value":"265", "label":"F11"}
+        ,{"value":"266", "label":"F12"}
+        ,{"value":"267", "label":"G1"}
+        ,{"value":"268", "label":"G2"}
+        ,{"value":"269", "label":"G3"}
+        ,{"value":"270", "label":"G4"}
+        ,{"value":"271", "label":"G5"}
+        ,{"value":"272", "label":"G6"}
+        ,{"value":"273", "label":"G7"}
+        ,{"value":"274", "label":"G8"}
+        ,{"value":"275", "label":"G9"}
+        ,{"value":"276", "label":"G10"}
+        ,{"value":"277", "label":"G11"}
+        ,{"value":"278", "label":"G12"}
+        ,{"value":"279", "label":"H1"}
+        ,{"value":"280", "label":"H2"}
+        ,{"value":"281", "label":"H3"}
+        ,{"value":"282", "label":"H4"}
+        ,{"value":"283", "label":"H5"}
+        ,{"value":"284", "label":"H6"}
+        ,{"value":"285", "label":"H7"}
+        ,{"value":"286", "label":"H8"}
+        ,{"value":"287", "label":"H9"}
+        ,{"value":"288", "label":"H10"}
+        ,{"value":"289", "label":"H11"}
+        ,{"value":"290", "label":"H12"}
+        ,{"value":"291", "label":"I1"}
+        ,{"value":"292", "label":"I2"}
+        ,{"value":"293", "label":"I3"}
+        ,{"value":"294", "label":"I4"}
+        ,{"value":"295", "label":"I5"}
+        ,{"value":"296", "label":"I6"}
+        ,{"value":"297", "label":"I7"}
+        ,{"value":"298", "label":"I8"}
+        ,{"value":"299", "label":"I9"}
+        ,{"value":"300", "label":"I10"}
+        ,{"value":"301", "label":"I11"}
+        ,{"value":"302", "label":"I12"}
+        ,{"value":"303", "label":"J1"}
+        ,{"value":"304", "label":"J2"}
+        ,{"value":"305", "label":"J3"}
+        ,{"value":"306", "label":"J4"}
+        ,{"value":"307", "label":"J5"}
+        ,{"value":"308", "label":"J6"}
+        ,{"value":"309", "label":"J7"}
+        ,{"value":"310", "label":"J8"}
+        ,{"value":"311", "label":"J9"}
+        ,{"value":"312", "label":"J10"}
+        ,{"value":"313", "label":"J11"}
+        ,{"value":"314", "label":"J12"}
+        ,{"value":"315", "label":"K1"}
+        ,{"value":"316", "label":"K2"}
+        ,{"value":"317", "label":"K3"}
+        ,{"value":"318", "label":"K4"}
+        ,{"value":"319", "label":"K5"}
+        ,{"value":"320", "label":"K6"}
+        ,{"value":"321", "label":"K7"}
+        ,{"value":"322", "label":"K8"}
+        ,{"value":"323", "label":"K9"}
+        ,{"value":"324", "label":"K10"}
+        ,{"value":"325", "label":"K11"}
+        ,{"value":"326", "label":"K12"}
+        ,{"value":"327", "label":"L1"}
+        ,{"value":"328", "label":"L2"}
+        ,{"value":"329", "label":"L3"}
+        ,{"value":"330", "label":"L4"}
+        ,{"value":"331", "label":"L5"}
+        ,{"value":"332", "label":"L6"}
+        ,{"value":"333", "label":"L7"}
+        ,{"value":"334", "label":"L8"}
+        ,{"value":"335", "label":"L9"}
+        ,{"value":"336", "label":"L10"}
+        ,{"value":"337", "label":"L11"}
+        ,{"value":"338", "label":"L12"}
+        ,{"value":"339", "label":"M1"}
+        ,{"value":"340", "label":"M2"}
+        ,{"value":"341", "label":"M3"}
+        ,{"value":"342", "label":"M4"}
+        ,{"value":"343", "label":"M5"}
+        ,{"value":"344", "label":"M6"}
+        ,{"value":"345", "label":"M7"}
+        ,{"value":"346", "label":"M8"}
+        ,{"value":"347", "label":"M9"}
+        ,{"value":"348", "label":"M10"}
+        ,{"value":"349", "label":"M11"}
+        ,{"value":"350", "label":"M12"}
+        ,{"value":"351", "label":"N1"}
+        ,{"value":"352", "label":"N2"}
+        ,{"value":"353", "label":"N3"}
+        ,{"value":"354", "label":"N4"}
+        ,{"value":"355", "label":"N5"}
+        ,{"value":"356", "label":"N6"}
+        ,{"value":"357", "label":"N7"}
+        ,{"value":"358", "label":"N8"}
+        ,{"value":"359", "label":"N9"}
+        ,{"value":"360", "label":"N10"}
+        ,{"value":"361", "label":"N11"}
+        ,{"value":"362", "label":"N12"}
+        ,{"value":"363", "label":"O1"}
+        ,{"value":"364", "label":"O2"}
+        ,{"value":"365", "label":"O3"}
+        ,{"value":"366", "label":"O4"}
+        ,{"value":"367", "label":"O5"}
+        ,{"value":"368", "label":"O6"}
+        ,{"value":"369", "label":"O7"}
+        ,{"value":"370", "label":"O8"}
+        ,{"value":"371", "label":"O9"}
+        ,{"value":"372", "label":"O10"}
+        ,{"value":"373", "label":"O11"}
+        ,{"value":"374", "label":"O12"}
+        ,{"value":"375", "label":"P1"}
+        ,{"value":"376", "label":"P2"}
+        ,{"value":"377", "label":"P3"}
+        ,{"value":"378", "label":"P4"}
+        ,{"value":"379", "label":"P5"}
+        ,{"value":"380", "label":"P6"}
+        ,{"value":"381", "label":"P7"}
+        ,{"value":"382", "label":"P8"}
+        ,{"value":"383", "label":"P9"}
+        ,{"value":"384", "label":"P10"}
+        ,{"value":"385", "label":"P11"}
+        ,{"value":"386", "label":"P12"}
+        ,{"value":"387", "label":"Q1"}
+        ,{"value":"388", "label":"Q2"}
+        ,{"value":"389", "label":"Q3"}
+        ,{"value":"390", "label":"Q4"}
+        ,{"value":"391", "label":"Q5"}
+        ,{"value":"392", "label":"Q6"}
+        ,{"value":"393", "label":"Q7"}
+        ,{"value":"394", "label":"Q8"}
+        ,{"value":"395", "label":"Q9"}
+        ,{"value":"396", "label":"Q10"}
+        ,{"value":"397", "label":"Q11"}
+        ,{"value":"398", "label":"Q12"}
+        ,{"value":"399", "label":"Q13"}
+        ,{"value":"400", "label":"Q14"}
+        ,{"value":"401", "label":"Q15"}
+        ,{"value":"402", "label":"Q16"}
+        ,{"value":"403", "label":"Q17"}
+        ,{"value":"404", "label":"Q18"}
+        ,{"value":"405", "label":"Q19"}
+        ,{"value":"406", "label":"Q20"}
+        ,{"value":"407", "label":"Q21"}
+        ,{"value":"408", "label":"Q22"}
+        ,{"value":"409", "label":"Q23"}
+        ,{"value":"410", "label":"Q24"}
+        ,{"value":"411", "label":"Q25"}
+        ,{"value":"412", "label":"Q26"}
+        ,{"value":"413", "label":"Q27"}
+        ,{"value":"414", "label":"Q28"}
+        ,{"value":"415", "label":"Q29"}
+        ,{"value":"416", "label":"Q30"}
+        ,{"value":"417", "label":"Q31"}
+        ,{"value":"418", "label":"Q32"}
+        ,{"value":"419", "label":"Q33"}
+        ,{"value":"420", "label":"Q34"}
+        ,{"value":"421", "label":"Q35"}
+        ,{"value":"422", "label":"Q36"}
+        ,{"value":"423", "label":"Q37"}
+        ,{"value":"424", "label":"Q38"}
+        ,{"value":"425", "label":"Q39"}
+        ,{"value":"426", "label":"Q40"}
+        ,{"value":"427", "label":"Q41"}
+        ,{"value":"428", "label":"Q42"}
+        ,{"value":"429", "label":"Q43"}
+        ,{"value":"430", "label":"Q44"}
+        ,{"value":"431", "label":"Q45"}
+        ,{"value":"432", "label":"Q46"}
+        ,{"value":"433", "label":"Q47"}
+        ,{"value":"434", "label":"Q48"}
+        ,{"value":"435", "label":"Q49"}
+        ,{"value":"436", "label":"Q50"}
+        ,{"value":"437", "label":"Q51"}
+        ,{"value":"438", "label":"Q52"}
+        ,{"value":"439", "label":"Q53"}
+        ,{"value":"440", "label":"Q54"}
+        ,{"value":"441", "label":"Q55"}
+        ,{"value":"442", "label":"Q56"}
+        ,{"value":"443", "label":"Q57"}
+        ,{"value":"444", "label":"Q58"}
+        ,{"value":"445", "label":"Q59"}
+        ,{"value":"446", "label":"Q60"}
+        ,{"value":"447", "label":"R1"}
+        ,{"value":"448", "label":"R2"}
+        ,{"value":"449", "label":"S1"}
+        ,{"value":"450", "label":"S2"}
+        ,{"value":"451", "label":"S3"}
+        ,{"value":"452", "label":"S4"}
+        ,{"value":"453", "label":"S5"}
+        ,{"value":"454", "label":"S6"}
+        ,{"value":"455", "label":"S7"}
+        ,{"value":"456", "label":"S8"}
+        ,{"value":"457", "label":"S9"}
+        ,{"value":"458", "label":"S10"}
+        ,{"value":"459", "label":"S11"}
+        ,{"value":"460", "label":"S12"}
+        ,{"value":"461", "label":"S13"}
+        ,{"value":"462", "label":"S14"}
+        ,{"value":"463", "label":"S15"}
+        ,{"value":"464", "label":"S16"}
+        ,{"value":"465", "label":"S17"}
+        ,{"value":"466", "label":"S18"}
+        ,{"value":"467", "label":"S19"}
+        ,{"value":"468", "label":"S20"}
+        ,{"value":"469", "label":"S21"}
+        ,{"value":"470", "label":"S22"}
+        ,{"value":"471", "label":"S23"}
+        ,{"value":"472", "label":"S24"}
+        ,{"value":"473", "label":"S25"}
+        ,{"value":"474", "label":"S26"}
+        ,{"value":"475", "label":"S27"}
+        ,{"value":"476", "label":"S28"}
+        ,{"value":"477", "label":"S29"}
+        ,{"value":"478", "label":"S30"}
+        ,{"value":"479", "label":"X1"}
+        ,{"value":"480", "label":"X2"}
+        ,{"value":"481", "label":"X3"}
+        ,{"value":"482", "label":"X4"}
+        ,{"value":"483", "label":"X5"}
+        ,{"value":"484", "label":"X6"}
+        ,{"value":"485", "label":"Y1"}
+        ,{"value":"486", "label":"Y2"}
+        ,{"value":"487", "label":"Y3"}
+        ,{"value":"488", "label":"Y4"}
+        ,{"value":"489", "label":"Y5"}
+        ,{"value":"490", "label":"Y6"}
+        ,{"value":"491", "label":"Y7"}
+        ,{"value":"492", "label":"Y8"}
+        ,{"value":"493", "label":"Y9"}
+        ,{"value":"494", "label":"Y10"}
+        ,{"value":"495", "label":"Y11"}
+        ,{"value":"496", "label":"Y12"}
+        ,{"value":"497", "label":"Y13"}
+        ,{"value":"498", "label":"Y14"}
+        ,{"value":"499", "label":"Y15"}
+        ,{"value":"500", "label":"Y16"}
+        ,{"value":"501", "label":"Y17"}
+        ,{"value":"502", "label":"Y18"}
+        ,{"value":"503", "label":"Y19"}
+        ,{"value":"504", "label":"Y20"}
+        ,{"value":"505", "label":"Y21"}
+        ,{"value":"506", "label":"Y22"}
+        ,{"value":"507", "label":"Y23"}
+        ,{"value":"508", "label":"Y24"}
+        ,{"value":"509", "label":"Y25"}
+        ,{"value":"510", "label":"Y26"}
+        ,{"value":"511", "label":"Y27"}
+        ,{"value":"512", "label":"Y28"}
+        ,{"value":"513", "label":"Y29"}
+        ,{"value":"514", "label":"Y30"}
+        ,{"value":"515", "label":"Y31"}
+        ,{"value":"516", "label":"Y32"}
+        ,{"value":"517", "label":"Y33"}
+        ,{"value":"518", "label":"Y34"}
+        ,{"value":"519", "label":"Y35"}
+        ,{"value":"520", "label":"Y36"}
+        ,{"value":"521", "label":"Z1"}
+        ,{"value":"522", "label":"Z2"}
+        ,{"value":"523", "label":"Z3"}
+        ,{"value":"524", "label":"Z4"}
+        ,{"value":"525", "label":"Z5"}
+        ,{"value":"526", "label":"Z6"}
+        ,{"value":"527", "label":"Z7"}
+        ,{"value":"528", "label":"Z8"}
+        ,{"value":"529", "label":"Z9"}
+        ,{"value":"530", "label":"Z10"}
+        ,{"value":"531", "label":"Z11"}
+        ,{"value":"532", "label":"Z12"}
+        ,{"value":"533", "label":"Z13"}
+        ,{"value":"534", "label":"Z14"}
+        ,{"value":"535", "label":"Z15"}
+        ,{"value":"536", "label":"Z16"}
+        ,{"value":"537", "label":"Z17"}
+        ,{"value":"538", "label":"Z18"}
+        ,{"value":"539", "label":"Z19"}
+        ,{"value":"540", "label":"Z20"}
+        ,{"value":"541", "label":"T1"}
+        ,{"value":"542", "label":"T2"}
+        ,{"value":"543", "label":"T3"}
+        ,{"value":"544", "label":"T4"}
+        ,{"value":"545", "label":"T5"}
+        ,{"value":"546", "label":"T6"}
+        ,{"value":"547", "label":"T7"}
+        ,{"value":"548", "label":"T8"}
+        ,{"value":"549", "label":"T9"}
+        ,{"value":"550", "label":"T10"}
+        ,{"value":"551", "label":"T11"}
+        ,{"value":"552", "label":"T12"}
+        ,{"value":"553", "label":"T13"}
+        ,{"value":"554", "label":"T14"}
+        ,{"value":"555", "label":"AA1"}
+        ,{"value":"556", "label":"AA2"}
+        ,{"value":"557", "label":"AA3"}
+        ,{"value":"558", "label":"AA4"}
+        ,{"value":"559", "label":"AA5"}
+        ,{"value":"560", "label":"AA5"}
+        ,{"value":"561", "label":"AA6"}
+        ,{"value":"562", "label":"AA7"}
+        ,{"value":"563", "label":"AA8"}
+        ,{"value":"564", "label":"AA9"}
+        ,{"value":"565", "label":"AA10"}
+        ,{"value":"566", "label":"AA11"}
+        ,{"value":"567", "label":"AA12"}
+        ,{"value":"568", "label":"AA13"}
+        ,{"value":"569", "label":"AA14"}
+        ,{"value":"570", "label":"AA15"}
+        ,{"value":"571", "label":"AA16"}
+        ,{"value":"572", "label":"AA17"}
+        ,{"value":"573", "label":"AA18"}
+        ,{"value":"574", "label":"AA19"}
+        ,{"value":"575", "label":"AA20"}
+        ,{"value":"576", "label":"AA21"}
+        ,{"value":"577", "label":"AA22"}
+        ,{"value":"578", "label":"AA23"}
+        ,{"value":"579", "label":"AA24"}
+        ,{"value":"580", "label":"AA25"}
+        ,{"value":"581", "label":"AA26"}
+        ,{"value":"582", "label":"AA27"}
+        ,{"value":"583", "label":"AA28"}
+        ,{"value":"584", "label":"AA29"}
+        ,{"value":"585", "label":"AA30"}
+        ,{"value":"586", "label":"AA31"}
+        ,{"value":"587", "label":"AA32"}
+        ,{"value":"588", "label":"AA33"}
+        ,{"value":"589", "label":"AA34"}
+        ,{"value":"590", "label":"AA35"}
+        ,{"value":"591", "label":"AA36"}
+        ,{"value":"592", "label":"AA37"}
+        ,{"value":"593", "label":"AA38"}
+        ,{"value":"594", "label":"AA39"}
+        ,{"value":"595", "label":"AA40"}
+        ,{"value":"596", "label":"AA41"}
+        ,{"value":"597", "label":"AA42"}
+        ,{"value":"598", "label":"AA43"}
+        ,{"value":"599", "label":"AA44"}
+        ,{"value":"600", "label":"AA45"}
+        ,{"value":"601", "label":"AA46"}
+        ,{"value":"602", "label":"AA47"}
+        ,{"value":"603", "label":"AA48"}
+        ,{"value":"604", "label":"AA49"}
+        ,{"value":"605", "label":"AA50"}
+        ,{"value":"606", "label":"BB1"}
+        ,{"value":"607", "label":"BB2"}
+        ,{"value":"608", "label":"BB3"}
+        ,{"value":"609", "label":"BB4"}
+        ,{"value":"610", "label":"BB5"}
+        ,{"value":"611", "label":"BB6"}
+        ,{"value":"612", "label":"BB7"}
+        ,{"value":"613", "label":"BB8"}
+        ,{"value":"614", "label":"BB9"}
+        ,{"value":"615", "label":"BB10"}
+        ,{"value":"616", "label":"BB11"}
+        ,{"value":"617", "label":"BB12"}
+        ,{"value":"618", "label":"BB13"}
+        ,{"value":"619", "label":"BB14"}
+        ,{"value":"620", "label":"BB15"}
+        ,{"value":"621", "label":"BB16"}
+        ,{"value":"622", "label":"BB17"}
+        ,{"value":"623", "label":"BB18"}
+        ,{"value":"624", "label":"BB19"}
+        ,{"value":"625", "label":"BB20"}
+        ,{"value":"626", "label":"BB21"}
+        ,{"value":"627", "label":"BB22"}
+        ,{"value":"628", "label":"BB23"}
+        ,{"value":"629", "label":"BB24"}
+        ,{"value":"630", "label":"BB25"}
+        ,{"value":"631", "label":"BB26"}
+        ,{"value":"632", "label":"BB27"}
+        ,{"value":"633", "label":"BB28"}
+        ,{"value":"634", "label":"BB29"}
+        ,{"value":"635", "label":"BB30"}
+        ,{"value":"636", "label":"Q61"}
+        ,{"value":"637", "label":"Q62"}
+        ,{"value":"638", "label":"Q63"}
+        ,{"value":"639", "label":"Q64"}
+        ,{"value":"640", "label":"Q65"}
+        ,{"value":"641", "label":"Q66"}
+        ,{"value":"642", "label":"Q67"}
+        ,{"value":"643", "label":"Q68"}
+      ]}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Supplier Info", "order":"7", "cssClass": "size-p-33 row2 last"
+    , "children": [
+      {"type":"text", "name":"preferredSupplier", "label":"Preferred Supplier"
+        , "required":"", "order":"1", "cssClass": "size-p-100", "autocomplete": "supplier"}
+      ,{"type":"text", "name":"genericName", "label":"Generic Name (Supplier's Name for this Product)", "required":"", "order":"2", "cssClass": "size-p-100"}
+      ,{"type":"text", "name":"genericSku", "label":"Generic SKU (Supplier's SKU)", "required":"", "order":"3", "cssClass": "size-p-100"}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Alternate Units of Measure", "order":"8", "cssClass": "size-p-33 row3"
+    , "children": [
+      {"type":"markup", "order":"1", "content":"1", "cssClass": "size-p-10 unit-markup"}
+      ,{"type":"select", "name":"unit1", "label":"", "required":"", "order":"2", "cssClass": "size-p-40", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"markup", "order":"3", "content":"=", "cssClass": "size-p-15 equals-markup"}
+      ,{"type":"text", "name":"equiv1", "label":"", "required":"", "order":"4", "cssClass": "size-p-40"}
+      ,{"type":"checkbox", "name":"isMinimumUnit", "label":"This is the minimum picking unit in which the item will be sold. Qty will be multiples of this unit.", "required":"", "order":"5", "cssClass": "size-p-100"}
+      ,{"type":"markup", "order":"1", "content":"1", "cssClass": "size-p-10 unit-markup"}
+      ,{"type":"select", "name":"unit2", "label":"", "required":"", "order":"2", "cssClass": "size-p-40", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"markup", "order":"3", "content":"=", "cssClass": "size-p-15 equals-markup"}
+      ,{"type":"text", "name":"equiv2", "label":"", "required":"", "order":"4", "cssClass": "size-p-40"}
+      ,{"type":"markup", "order":"1", "content":"1", "cssClass": "size-p-10 unit-markup"}
+      ,{"type":"select", "name":"unit3", "label":"", "required":"", "order":"2", "cssClass": "size-p-40", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"markup", "order":"3", "content":"=", "cssClass": "size-p-15 equals-markup"}
+      ,{"type":"text", "name":"equiv3", "label":"", "required":"", "order":"4", "cssClass": "size-p-40"}
+      ,{"type":"markup", "order":"1", "content":"1", "cssClass": "size-p-10 unit-markup"}
+      ,{"type":"select", "name":"unit4", "label":"", "required":"", "order":"2", "cssClass": "size-p-40", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"markup", "order":"3", "content":"=", "cssClass": "size-p-15 equals-markup"}
+      ,{"type":"text", "name":"equiv4", "label":"", "required":"", "order":"4", "cssClass": "size-p-40"}
+      ,{"type":"markup", "order":"1", "content":"1", "cssClass": "size-p-10 unit-markup"}
+      ,{"type":"select", "name":"unit5", "label":"", "required":"", "order":"2", "cssClass": "size-p-40", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"markup", "order":"3", "content":"=", "cssClass": "size-p-15 equals-markup"}
+      ,{"type":"text", "name":"equiv5", "label":"", "required":"", "order":"4", "cssClass": "size-p-40"}
+      ,{"type":"markup", "order":"1", "content":"1", "cssClass": "size-p-10 unit-markup"}
+      ,{"type":"select", "name":"unit6", "label":"", "required":"", "order":"2", "cssClass": "size-p-40", "options":[
+        {"value":"156", "label":"SF"}
+        ,{"value":"157", "label":"in"}
+        ,{"value":"158", "label":"CF"}
+        ,{"value":"159", "label":"lb"}
+        ,{"value":"160", "label":"SQM"}
+        ,{"value":"161", "label":"CM"}
+        ,{"value":"162", "label":"CBM"}
+        ,{"value":"163", "label":"Kg"}
+        ,{"value":"164", "label":"Each"}
+        ,{"value":"165", "label":"LINEAR FEET"}
+        ,{"value":"166", "label":"SQYD"}
+        ,{"value":"167", "label":"bundle"}
+      ]}
+      ,{"type":"markup", "order":"3", "content":"=", "cssClass": "size-p-15 equals-markup"}
+      ,{"type":"text", "name":"equiv6", "label":"", "required":"", "order":"4", "cssClass": "size-p-40"}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Website Module", "order":"9", "cssClass": "size-p-33 row3"
+    , "children": [
+      {"type":"checkbox", "name":"isNewArrival", "label":"Is New Arrival", "required":"", "order":"1", "cssClass": "size-p-50"}
+      ,{"type":"checkbox", "name":"hideOnWebsite", "label":"Hide On Website", "required":"", "order":"2", "cssClass": "size-p-50"}
+      ,{"type":"checkbox", "name":"isFeatureProduct", "label":"Is Feature Product", "required":"", "order":"3", "cssClass": "size-p-50"}
+      ,{"type":"text", "name":"webUse", "label":"Web Use/Web Name", "required":"", "order":"4", "cssClass": "size-p-100"}
+      ,{"type":"textarea", "name":"description", "label":"Description On Website", "required":"", "order":"5", "cssClass": "size-p-100"}
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"", "order":"10", "cssClass": "size-p-33 row3 last"
+    , "children": [
+      {"type":"textarea", "name":"notes", "label":"Notes", "required":"", "order":"1", "cssClass": "size-p-100"}
+      ,{"type":"textarea", "name":"instructions", "label":"Instructions", "required":"", "order":"2", "cssClass": "size-p-100"}
+      ,{"type":"textarea", "name":"disclaimer", "label":"Disclaimer", "required":"", "order":"3", "cssClass": "size-p-100"}
+    ]
+  }
+]

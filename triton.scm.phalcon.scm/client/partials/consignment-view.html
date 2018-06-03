@@ -1,0 +1,77 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container page-consignment-view">
+  <div class="left-column">
+    <div class="form-field-group-container size-p-100">
+      <div class="form-field-group van-general-info">
+        <h2>{{company.company_name}}</h2>
+        <p class="van-info-p">{{company.address}}</p>
+        <p class="van-info-p">{{company.city}}</p>
+        <p class="van-info-p">{{company.state}}</p>
+        <p class="van-info-p">{{company.phones}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="right-column">
+    <form novalidate class="triton-form consignment-add-product">
+      <div class="form-field-group-container size-p-100">
+        <div class="form-field-group">
+          <div class="title">Add Inventory</div>
+            <div class="left-section">
+              <div class="form-field size-p-70 field-name-cont">
+                <label for="productName">Product Name</label>
+                <input type="text" name="productName" ng-model="newProduct.name" required="required" class="field-name">
+              </div>
+              <div class="form-field size-p-30 field-sku-cont">
+                <label for="productSku">SKU</label>
+                <input type="text" name="productSku" ng-model="newProduct.sku" required="required" class="field-sku">
+              </div>
+              <div class="form-field size-p-100 field-description-cont">
+                <label for="productDescription">Description</label>
+                <input type="text" name="productDescription" ng-model="newProduct.description" required="required" class="field-description">
+              </div>
+            </div>
+            <div class="right-section">
+              <div class="form-field size-p-50 field-current-cont">
+                <label for="productCurrent">Current</label>
+                <input type="text" name="productCurrent" ng-model="newProduct.current" required="required" class="field-current">
+              </div>
+              <div class="form-field size-p-50 field-curunit-cont">
+                <label for="productCurrentUnits">Units</label>
+                <input type="text" name="productCurrentUnits" ng-model="newProduct.currentUnits" required="required" class="field-current-units">
+              </div>
+              <div class="form-field size-p-50 field-amount-cont">
+                <label for="productAmount">Amount</label>
+                <input type="text" name="productAmount" ng-model="newProduct.amount" required="required" class="field-amount">
+              </div>
+              <div class="button-container">
+                <input type="button" value="Add" id="consignment-add-product" class="button-orange" ng-click="addProductToConsignment()">
+              </div>
+            </div>
+          <div class="clearfix"></div>
+          <br><br>
+          <div class="title">Consignment Inventory</div>
+          <table class="table table-bordered table-hover table-triton">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="dataRow in company.inventory">
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.sku }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.name }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.description }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.price_1 }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.amount }}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

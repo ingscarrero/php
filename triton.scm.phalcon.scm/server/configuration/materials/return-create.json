@@ -1,0 +1,14 @@
+[
+  {
+    "type": "group", "name":"van-create", "label":"", "order":"1", "cssClass": "size-p-50"
+    , "children": [
+      {"type":"text", "name":"name", "label":"Name", "required":"required", "order":"1", "cssClass": "size-p-100"}
+      ,{"type":"text", "name":"supplier", "label":"Supplier", "required":"required", "order":"2", "cssClass": "size-p-40"}
+      ,{"type":"text", "name":"invoice", "label":"Invoice", "required":"required", "order":"2", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"po", "label":"PO", "required":"required", "order":"2", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"location", "label":"Location", "required":"required", "order":"2", "cssClass": "size-p-40"}
+      ,{"type":"text", "name":"container", "label":"Container", "required":"required", "order":"2", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"amount", "label":"Amount", "required":"required", "order":"2", "cssClass": "size-p-30"}
+    ]
+  }
+]

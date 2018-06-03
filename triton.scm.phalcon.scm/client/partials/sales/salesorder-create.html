@@ -1,0 +1,103 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+    <form novalidate class="triton-form {{formClasses}}" name="salesOrderForm" id="salesOrderForm">
+        <div ng-repeat="fieldGroup in formView">
+            <div class="form-field-group-container {{fieldGroup.cssClass}}" >
+                <div class="form-field-group" >
+                    <div ng-if="fieldGroup.label" class="title">{{fieldGroup.label}}</div>
+                    <div class="form-field {{field.cssClass}} field-{{field.name}}-cont" ng-repeat="field in fieldGroup.children">
+                        <div ng-show="field.showgroup == undefined || shownonpickup=='Yes'" >
+                        <label 
+                            ng-if="field.type != 'markup'" 
+                            for="material{{field.name}}"
+                            >
+                            {{field.label}}
+                        </label>
+                        <div 
+                            ng-if="field.type == 'markup'" 
+                            class="field-{{field.name}}" 
+                            dynamic-html="{{field.content}}">
+                            
+                        </div>
+                    
+                        <div  ng-if="field.type == 'autocomplete-select'" class="form-group" >
+                         <input 
+                           
+                            type="hidden" 
+                            name="hidden_{{field.name}}" 
+                             ng-model="newSalesOrder[field.name]" 
+                            required="{{field.required}}"
+                            class="field-{{field.name}}"
+                            />    
+                        <input type="text" ng-model="newSalesOrderD[field.name]"   name="{{field.name}}" required="{{field.required}}" class="field-{{field.name}}" />
+                        
+                        </div>
+                        <div ng-if="field.type == 'select'" class="form-group"  >
+                        <select 
+                            
+                            name="{{field.name}}" 
+                            ng-model="newSalesOrder[field.name]" 
+                            required="{{field.required}}"
+                            class="field-{{field.name}}"
+                           
+                            >
+							<option ng-repeat="option in dropdowndata[field.serveroptionmodel]" value="{{option.value}}">{{option.label}}</option>
+                        </select>
+                        
+                        </div>
+                        <textarea 
+                            ng-if="field.type == 'textarea'" 
+                            name="{{field.name}}" 
+                            ng-model="newSalesOrder[field.name]" 
+                            required="{{field.required}}"
+                            class="field-{{field.name}}"
+                            ></textarea>
+                        <div class="input-group" ng-if="field.type == 'date'" >
+                            <input name="{{field.name}}"  type="text" data-date-format="dd/MM/yyyy" 
+                                   model-date-format="yyyy-MM-dd HH:mm:ss" data-date-type="string" style="min-width:180px;" 
+                                   data-autoclose="1"  bs-datepicker ng-model="newSalesOrder[field.name]"  />
+              
+                        </div>
+                        <div class="input-group" ng-if="field.type == 'disabled'" >
+                            <input name="{{field.name}}" disabled="disabled" class="field-{{field.name}}" type="text"  ng-model="newSalesOrder[field.name]"  />
+              
+                        </div>
+                        
+                        <div ng-if="field.type != 'select' && field.type !='disabled' && field.type != 'markup' && field.type != 'textarea' && field.type != 'autocomplete-select' && field.type !='date'" class="form-group" >             
+                            <input 
+                            
+                            type="{{field.type}}" 
+                            name="{{field.name}}" 
+                            ng-model="newSalesOrder[field.name]" 
+                            required="{{field.required}}"
+                            class="field-{{field.name}}"
+                            >
+                        </div>
+            </div>       
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="errorMessageModal" tabindex="-1" role="dialog" aria-labelledby="errorMessageModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="errorMessageModal">Error message</h4>
+      </div>
+      <div class="modal-body">
+          <div ng-repeat="error in requirederros">
+                <div class="alert alert-danger" role="alert">{{error}}</div>        
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

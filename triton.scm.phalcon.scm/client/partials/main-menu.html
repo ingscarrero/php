@@ -1,0 +1,143 @@
+<div id="main-menu-container" ng-class="menuBClasses">
+  <div id="main-menu-header" ng-click="clickMenuHeader()">
+    <img class="arrow" ng-src="img/arrow-big-left.png"/>
+  </div>
+  <div id="main-menu">
+    <ul class="module-menu-list">
+      <li><i class='fa fa-home fa-lg fa-fw'></i><span>Dashboard</span></li>
+      <li><i class='fa fa-folder fa-lg fa-fw'></i><span>Presales</span></li>
+      <div class='main-menu-item purchases'>
+        <a href="/triton/index"><li><i class='fa fa-credit-card fa-lg fa-fw'></i><span>Purchases</span></li></a>
+        <div class="float-menu-cont">
+          <div class="float-pointer"></div>
+          <div class="menu-container">
+            <div class="menu-container-left">
+              <ul>
+                <a href="/triton/company/list?type=supplier">Inventory Suppliers</a>
+                <br>
+                <div class="float-menu-separator"></div>
+                <div class="menu-pending">Pre-purchase request</div>
+                <div class="menu-pending">To-be Purchased</div>
+                <div class="menu-pending">To-be Allocated</div>
+                <div class="float-menu-separator"></div>
+                <a href="/triton/po/search">All PO's</a>
+                <br>
+                <a href="/triton/po/search?scope=unapproved">UnApproved PO's</a>
+                <br>
+                <a href="/triton/po/search?scope=pending">Pending PO's</a>
+              </ul>
+            </div>
+            <div class="menu-container-right">
+              <ul>
+                <a href="/triton/po/search">All Supplier Invoices</a>
+                <br>
+                <a href="/triton/po/search">Not Received</a>
+                <div class="float-menu-separator"></div>
+                <div class="menu-pending">Freight Bills</div>
+                <a href="/triton/company/list?type=freight">Freight Vendors</a>
+                <div class="float-menu-separator"></div>
+                <a href="/triton/po/index?scope=global">New Global PO</a>
+                <br>
+                <a href="/triton/po/search?scope=global">Global PO's</a>
+                <br>
+                <a href="/triton/po/list?scope=global">Global PO's Search</a>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="search-bar-container">
+            <input type="text" name="supplier_name" class="triton-autocomplete">
+          </div>
+        </div>
+      </div>
+      <div class='main-menu-item inventory'>
+        <a href="/triton/client/#/inventory"><li><i class='fa fa-truck fa-lg fa-fw'></i><span>Inventory</span></li></a>
+        <div class="float-menu-cont">
+          <div class="float-pointer"></div>
+          <div class="menu-container">
+            <div class="menu-container-left">
+              <ul>
+                <a href="/triton/client/#/inventory">All Products</a>
+                <br>
+                <a href="/triton/client/#/inventory/create">New Product</a>
+                <br>
+                <div class="float-menu-separator"></div>
+                <div class="menu-pending">Stock Products</div>
+                <div class="menu-pending">Non Stock Products</div>
+                <div class="float-menu-separator"></div>
+                <a href="/triton/client/#/inventory/items/add">Inventory Manual Submitting</a>
+                <br>
+                <div class="float-menu-separator"></div>
+                <div class="menu-pending">In Transit</div>
+                <div class="menu-pending">Calendar</div>
+              </ul>
+            </div>
+            <div class="menu-container-right">
+              <ul>
+                <div class="menu-pending">Inventory Search</div>
+                <div class="menu-pending">Inventory By Type</div>
+                <div class="menu-pending">Inventory By Location</div>
+                <div class="float-menu-separator"></div>
+                <a href="/triton/client/#/inventory/returns/list">Inventory Returns</a>
+                <br>
+                <div class="float-menu-separator"></div>
+                <a href="/triton/client/#/inventory/van/create">Vans Create</a>
+                <br>
+                <a href="/triton/client/#/inventory/van/inventory">Vans Inventory</a>
+                <br>
+                <div class="float-menu-separator"></div>
+                <a href="/triton/client/#/inventory/consignment/list">Consignments</a>
+                <br>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="search-bar-container">
+            <input type="text" name="supplier_name" class="triton-autocomplete">
+          </div>
+        </div>
+      </div>
+      <!--li><a ng-href="/triton/client/#/salesorder/list" style="color:#fff;"><i class='fa fa-tag fa-lg fa-fw'></i><span>Sales</span></a></li-->
+      <div class='main-menu-item sales'>
+        <a ng-href="/triton/client/#/salesorder/list" style="color:#fff;">
+          <li><i class='fa fa-tag fa-lg fa-fw'></i><span>Sales</span></li>
+        </a>
+        <div class="float-menu-cont">
+          <div class="float-pointer"></div>
+          <div class="menu-container">
+            <div class="menu-container-left">
+              <ul>
+                <a href="/triton/client/#/salesorder/list">All SOs</a>
+                <br>
+                <a href="/triton/client/#/salesorder/save/new">New SO</a>
+                <br>
+                <div class="float-menu-separator"></div>
+                <div class="menu-pending">Invoices</div>
+                <div class="float-menu-separator"></div>
+              </ul>
+            </div>
+            <div class="menu-container-right">
+              <ul>
+                <div class="menu-pending">Returns</div>
+                <div class="menu-pending">New Return Order</div>
+                <div class="float-menu-separator"></div>
+                <br>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="search-bar-container">
+            <input type="text" name="supplier_name" class="triton-autocomplete">
+          </div>
+        </div>
+      </div>
+      <li><i class='fa fa-pencil fa-lg fa-fw'></i><span>Accounting</span></li>
+      <li><i class='fa fa-bar-chart fa-lg fa-fw'></i><span>Reports</span></li>
+    </ul>
+    <ul class="admin-menu-list">
+      <li><i class='fa fa-unlock fa-lg fa-fw'></i><span>Admin</span></li>
+      <li><i class='fa fa-cog fa-lg fa-fw'></i><span>Setup</span></li>
+      <li><i class='fa fa-wrench fa-lg fa-fw'></i><span>Support</span></li>
+    </ul>
+  </div>
+</div>

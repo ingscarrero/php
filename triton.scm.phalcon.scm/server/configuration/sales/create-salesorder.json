@@ -1,0 +1,81 @@
+[
+  {
+    "type": "group", "name":"", "label":"", "order":"1", "cssClass": "size-p-100"
+    , "children": [
+       {"type":"disabled", "name":"sales_order_number", "label":"S.O.#",  "order":"1", "cssClass": "size-p-25"}
+      ,{"type":"date", "name":"date", "mname": "openeddate", "label":"Date", "required":"true", "order":"2", "cssClass": "size-p-25 datepicker"}
+      ,{"type":"text", "name":"customer_po_number", "label":"Customer P.O. #",  "order":"3", "cssClass": "size-p-25"}
+      ,{"type":"select", "name":"location", "label":"Location",  "order":"4", "cssClass": "size-p-25", "serveroptionmodel":"locations"}
+    ]
+  }
+  , {
+    "type": "group", "name":"", "label":"Bill To", "order":"2", "cssClass": "size-p-50 row2"
+    , "children": [
+      {"type":"autocomplete-select", "name":"billing_customer", "label":"Billing Customer",  "order":"1", "cssClass": "form-field size-p-40", "serveroptionmodel":"companies"}
+      ,{"type":"text", "name":"billing_attention", "label":"Attention",  "order":"2", "cssClass": "form-field  size-p-30"}
+      ,{"type":"text", "name":"billing_address", "label":"Address",  "order":"3", "cssClass": "form-field  size-p-30"}
+      ,{"type":"text", "name":"billing_unit_number", "label":"Suite / Unit Number",  "order":"4", "cssClass": "size-p-40"}
+      ,{"type":"text", "name":"billing_city", "label":"City",  "order":"5", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"billing_state", "label":"State",  "order":"6", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"billing_zip", "label":"Zip",  "order":"7", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"billing_country", "label":"Country",  "order":"8", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"billing_phone", "label":"Phone",  "order":"9", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"billing_fax", "label":"Fax",  "order":"10", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"billing_mobile", "label":"Mobile",  "order":"11", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"billing_email", "label":"Email",  "order":"12", "cssClass": "size-p-50"}
+      ,{"type":"select", "name":"payment_terms", "label":"Payment Terms",  "order":"13", "cssClass": "size-p-50", "serveroptionmodel":"paymentterm_taxonomy_terms"}
+      ,{"type":"select", "name":"price_level", "label":"Price Level",  "order":"14", "cssClass": "size-p-50", "serveroptionmodel":"pricelevel_taxonomy_terms"}
+      ,{"type":"select", "name":"primary_sales_person", "label":"Primary Sales Person",  "order":"15", "cssClass": "size-p-50", "serveroptionmodel":"users"}
+      
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Ship To", "order":"3", "cssClass": "size-p-50 row2 last"
+    , "children": [
+      {"type":"markup", "name":"", "label":"Pick Up", "content":"<input  type='radio' name='ship_to' ng-click='listenShipTo()' value='Pick Up' ng-model='newSalesOrder.ship_to'  > <span class='radio-label'>Pick Up</span> <input type='radio' ng-click='listenShipTo()' ng-model='newSalesOrder.ship_to' name='ship_to' value='Delivery'> <span class='radio-label'>Delivery</span> <input type='radio' ng-click='listenShipTo()' name='ship_to' value='Other' ng-model='newSalesOrder.ship_to'> <span class='radio-label'>Other</span>", "order":"1", "cssClass":"size-p-50"}
+      ,{"type":"date", "name":"pickup_date", "mname": "openedpickup_date","label":"Requested Ship / Pick Up Date",  "order":"3", "cssClass": "size-p-50 datepicker"}
+      ,{"type":"select", "name":"sales_tax", "label":"Sales Tax",  "order":"2", "cssClass": "size-p-40", "serveroptionmodel":"salestax_taxonomy_terms"}
+      ,{"type":"text", "name":"geocode_latitude", "label":"Geocode Latitude",  "order":"17", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"geocode_longitude", "label":"Geocode Longitude",  "order":"18", "cssClass": "size-p-30"}
+      ,{"type":"autocomplete-select", "name":"ship_to_company", "label":"Ship To",  "order":"4", "cssClass": "size-p-20 non-pickup","showgroup": "Yes", "serveroptionmodel":"companies"}
+      ,{"type":"text", "name":"ship_to_attention", "label":"Attention",  "order":"5", "cssClass": "size-p-30 non-pickup" ,"showgroup": "Yes"}
+       ,{"type":"text", "name":"ship_to_mobile", "label":"Mobile",  "order":"15", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_email", "label":"Email",  "order":"16", "cssClass": "size-p-30 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_address", "label":"Address",  "order":"7", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_unit_number", "label":"Suite / Unit Number",  "order":"8", "cssClass": "size-p-30 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_name", "label":"Ship To Name",  "order":"6", "cssClass": "size-p-30 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_city", "label":"City",  "order":"9", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_state", "label":"State",  "order":"10", "cssClass": "size-p-20 non-pickup","showgroup": "Yes" }
+      ,{"type":"text", "name":"ship_to_zip", "label":"Zip",  "order":"11", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_country", "label":"Country",  "order":"12", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_phone", "label":"Phone",  "order":"13", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+      ,{"type":"text", "name":"ship_to_fax", "label":"Fax",  "order":"14", "cssClass": "size-p-20 non-pickup","showgroup": "Yes"}
+     
+      
+
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Associates", "order":"4", "cssClass": "size-p-33 row3"
+    , "children": [
+      {"type":"autocomplete-select", "name":"referred_by", "label":"Referred By",  "order":"1", "cssClass": "size-p-100", "serveroptionmodel":"companies"}
+      
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Instructions", "order":"5", "cssClass": "size-p-33 row3"
+    , "children": [
+      {"type":"textarea", "name":"special_delivery_instructions", "label":"Special / Delivery Instructions",  "order":"17", "cssClass": "size-p-100"}
+
+    ]
+  }
+  ,{
+    "type": "group", "name":"", "label":"Notes", "order":"6", "cssClass": "size-p-33  row3 last"
+    , "children": [
+     {"type":"textarea", "name":"internal_notes", "label":"Internal Notes",  "order":"2", "cssClass": "size-p-100"}
+     ,{"type":"textarea", "name":"printed_notes", "label":"Printed Notes",  "order":"2", "cssClass": "size-p-100"}
+      
+    ]
+  }
+  
+]

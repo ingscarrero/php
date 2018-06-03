@@ -1,0 +1,7 @@
+[
+  {"name":"name", "label":"Name", "order":"1", "type":"text"}
+  ,{"name":"description", "label":"Description", "order":"2", "type":"text"}
+  ,{"name":"model", "label":"Model", "order":"3", "type":"text"}
+  ,{"name":"id", "label":"Id", "order":"4", "type":"text"}
+  ,{"name":"capacity", "label":"Capacity", "order":"5", "type":"text"}
+]

@@ -1,0 +1,84 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+  <div class="form-field-group-container size-p-100 view-material-detail">
+    <div class="view-main-container">
+      <div class="view-field-group field-group-{{fieldGroup.name}}" 
+           ng-repeat="fieldGroup in view">
+        <div ng-if="fieldGroup.label" class="title">{{fieldGroup.label}}</div>
+        <div 
+          ng-repeat="field in fieldGroup.children"
+          class="view-field {{field.cssClass}} field-{{field.name}}-cont"
+        >
+          <div ng-if="field.type=='markup'">
+            {{field.content}}
+          </div>
+          <div ng-if="field.type!='markup' && field.label" class="field-label label-{{field.name}}">
+            {{field.label}}
+          </div>
+          <div ng-if="field.type!='markup' && !field.format" class="field-content field-{{field.name}}">
+            {{material[field.name]}}
+          </div>
+          <div ng-if="field.type!='markup' && field.format=='currency'" class="field-content field-{{field.name}}">
+            {{material[field.name] | currency}}
+          </div>
+          <div ng-if="field.type!='markup' && field.format=='number'" class="field-content field-{{field.name}}">
+            {{material[field.name] | number:2}}
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Inventory detail table -->
+  <div class="form-field-group-container size-p-100 last">
+    <!-- Table. -->
+    <table class="table table-bordered table-hover table-triton table-material-detail">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Barcode</th>
+          <th>Bundle</th>
+          <th>Supplier Reference</th>
+          <th>Location</th>
+          <th>Bin</th>
+          <th>Quantity</th>
+          <th>Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="dataRow in material.inventory_detail">
+          <td>{{ dataRow.id }}</td>
+          <td>{{ dataRow.barcode }}</td>
+          <td>{{ dataRow.bundle }}</td>
+          <td>{{ dataRow.supplier_reference }}</td>
+          <td>{{ dataRow.location }}</td>
+          <td>{{ dataRow.bin }}</td>
+          <td>{{ dataRow.quantity }}</td>
+          <td>{{ dataRow.available }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Pager -->
+    <nav>
+      <ul class="pagination">
+        <li>
+          <a href="" aria-label="Previous" ng-click="loadListPage(pager.before)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <!--li ng-repeat="page in pager.pages"-->
+        <li 
+          ng-repeat="i in getFixedIterator(pager.total_pages) track by $index"
+          ng-class="{active: $index+1==currentPage}"
+        >
+          <a ng-click="loadListPage($index+1)">{{ $index+1 }}</a>
+        </li>
+        <li>
+          <a href="" aria-label="Next" ng-click="loadListPage(pager.next)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>  
+</div>

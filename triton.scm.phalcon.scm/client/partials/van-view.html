@@ -1,0 +1,94 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container page-van-view">
+  <div class="left-column">
+    <div class="form-field-group-container size-p-100">
+      <div class="form-field-group van-general-info">
+        <h2>{{van.name}}</h2>
+        <p class="van-info-p">{{van.description}}</p>
+        <p class="van-info-p">{{van.model}}</p>
+        <p class="van-info-p">{{van.id}}</p>
+        <p class="van-info-p">{{van.capacity}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="right-column">
+    <form novalidate class="triton-form van-add-product">
+      <div class="form-field-group-container size-p-100">
+        <div class="form-field-group">
+          <div class="title">Add Inventory</div>
+            <div class="left-section">
+              <div class="form-field size-p-70 field-name-cont">
+                <label for="productName">Product Name</label>
+                <input type="text" name="productName" ng-model="newProduct.name" 
+                       required="required" class="field-name auto-group-product" 
+                       ng-change="autocompleteFieldChange('name', 'product')"
+                       id="productName" 
+                >
+                <input type="hidden" id="productIid" ng-model="newProduct.iid">
+              </div>
+              <div class="form-field size-p-30 field-sku-cont">
+                <label for="productSku">SKU</label>
+                <input type="text" name="productSku" ng-model="newProduct.sku" 
+                       readonly class="field-sku" id="productSku">
+              </div>
+              <div class="form-field size-p-100 field-description-cont">
+                <label for="productDescription">Description</label>
+                <input type="text" name="productDescription" ng-model="newProduct.description"
+                       readonly class="field-description" id="productDescription">
+              </div>
+            </div>
+            <div class="right-section">
+              <div class="form-field size-p-50 field-current-cont">
+                <label for="productCurrent">Current</label>
+                <input type="text" name="productCurrent" ng-model="newProduct.current"
+                       readonly class="field-current" id="productCurrent">
+              </div>
+              <div class="form-field size-p-50 field-curunit-cont">
+                <label for="productCurrentUnits">Units</label>
+                <input type="text" name="productCurrentUnits" ng-model="newProduct.currentUnits"
+                       readonly class="field-current-units" id="productUnits">
+              </div>
+              <div class="form-field size-p-50 field-amount-cont">
+                <label for="productAmount">Amount</label>
+                <input type="text" name="productAmount" ng-model="newProduct.amount" 
+                       required="required" class="field-amount" id="productAmount">
+              </div>
+              <div class="button-container">
+                <input type="button" value="Add" id="van-add-product" class="button-orange" ng-click="addProductToVan()">
+              </div>
+            </div>
+          <div class="clearfix"></div>
+          <br><br>
+          <div class="title">Van Inventory</div>
+          <table class="table table-bordered table-hover table-triton table-van-products">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="row-vanprod-prototype hidden">
+                <td class="sku"><a href="#/inventory/view/"></a></td>
+                <td class="name"><a href="#/inventory/view/"></a></td>
+                <td class="description"><a href="#/inventory/view/"></a></td>
+                <td class="price"><a href="#/inventory/view/"></a></td>
+                <td class="amount"><a href="#/inventory/view/"></a></td>
+              </tr>
+              <tr ng-repeat="dataRow in van.inventory">
+                <td class="sku"><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.sku }}</a></td>
+                <td class="name"><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.name }}</a></td>
+                <td class="description"><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.description }}</a></td>
+                <td class="price"><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.price_1 }}</a></td>
+                <td class="amount"><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.amount }}</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

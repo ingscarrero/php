@@ -1,0 +1,124 @@
+<!--script type="text/ng-template" id="header.html"></script-->
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+  <div class="form-field-group-container size-p-100 last">
+    <div class="form-field-group">
+      <!--Sidebar content-->
+      <div class="form-field size-p-20">
+        <label for="search">Name / SKU</label>
+        <input 
+          type="text" 
+          ng-model="query" 
+          ng-model-options="{ debounce: 500 }" 
+          name="search"
+          ng-change="loadListPage(1)"
+        >
+      </div>
+      <div class="form-field size-p-20">
+        <label for="type">Type / Form</label>
+        <select 
+          ng-model="typeFilter" 
+          name="type" 
+          ng-options="option.value as option.label for option in typeList"
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>
+        </select>
+      </div>
+      <div class="form-field size-p-20">
+        <label for="category">Category / Nature</label>
+        <select 
+          ng-model="categoryFilter" 
+          name="category" 
+          ng-options="option.value as option.label for option in categoryList"
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>>
+        </select>
+      </div>
+      <div class="form-field size-p-20">
+        <label for="group">Group</label>
+        <select 
+          ng-model="groupFilter" 
+          name="group" 
+          ng-options="option.value as option.label for option in groupList"
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>
+        </select>
+      </div>
+      <div class="form-field size-p-20">
+        <label for="thickness">Thickness</label>
+        <select 
+          ng-model="thicknessFilter" 
+          name="thickness" 
+          ng-options="option.value as option.label for option in thicknessList"
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>
+        </select>
+      </div>
+      <div class="form-field size-p-15">
+        <label for="kind">Kind</label>
+        <select 
+          ng-model="kindFilter" 
+          name="kind" 
+          ng-options="option.value as option.label for option in kindList"
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>
+        </select>
+      </div>
+      <div class="clearfix"></div>
+      <nav>
+         <ul class="pagination">
+           <li ng-repeat="letter in lettersArray">
+             <a ng-click="loadLetterPage(letter)">{{ letter }}</a>
+           </li>
+         </ul>
+       </nav>
+    </div>
+  </div>
+  <div class="form-field-group-container size-p-100 last">
+    <!-- Materials Table. -->
+    <table class="table table-bordered table-hover table-triton">
+      <thead>
+        <tr>
+          <th ng-repeat="field in tableView">{{ field.label }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="material in materials | filter:query | orderBy:orderProp">
+          <td ng-repeat="field in tableView">
+            <a href="#/inventory/view/{{material.pid}}">
+              <img ng-if="field.type=='image'" ng-src="{{ material.imageUrl }}" class="image-small-50">
+              {{ material[field.name] }}
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Pager -->
+    <nav>
+      <ul class="pagination">
+        <li>
+          <a href="" aria-label="Previous" ng-click="loadListPage(pager.before)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <!--li ng-repeat="page in pager.pages"-->
+        <li 
+          ng-repeat="i in getFixedIterator(pager.total_pages) track by $index"
+          ng-class="{active: $index+1==currentPage}"
+        >
+          <a ng-click="loadListPage($index+1)">{{ $index+1 }}</a>
+        </li>
+        <li>
+          <a href="" aria-label="Next" ng-click="loadListPage(pager.next)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

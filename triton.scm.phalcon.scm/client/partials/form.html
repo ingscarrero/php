@@ -1,0 +1,51 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+  <form novalidate class="triton-form {{formClasses}}">
+    <div ng-repeat="fieldGroup in formView">
+      <div class="form-field-group-container {{fieldGroup.cssClass}}">
+        <div class="form-field-group">
+          <div ng-if="fieldGroup.label" class="title">{{fieldGroup.label}}</div>
+          <div class="form-field {{field.cssClass}} field-{{field.name}}-cont" ng-repeat="field in fieldGroup.children">
+            <label 
+              ng-if="field.type!='markup'" 
+              for="material{{field.name}}"
+            >
+              {{field.label}}
+            </label>
+            <div 
+              ng-if="field.type=='markup'" 
+              class="field-{{field.name}}"
+            >
+              {{field.content}}
+            </div>
+            <select 
+              ng-if="field.type=='select'" 
+              name="material{{field.name.charAt(0).toUpperCase() + field.name.slice(1)}}" 
+              ng-model="newMaterial[field.name]" 
+              required="{{field.required}}"
+              class="field-{{field.name}}"
+              ng-options="option.value as option.label for option in field.options"
+            >
+            </select>
+            <textarea 
+              ng-if="field.type=='textarea'" 
+              name="material{{field.name.charAt(0).toUpperCase() + field.name.slice(1)}}" 
+              ng-model="newMaterial[field.name]" 
+              required="{{field.required}}"
+              class="field-{{field.name}}"
+            ></textarea>
+            <input 
+              ng-if="field.type!='select'&&field.type!='markup'&&field.type!='textarea'" 
+              type="{{field.type}}" 
+              name="material{{field.name.charAt(0).toUpperCase() + field.name.slice(1)}}" 
+              ng-model="newMaterial[field.name]" 
+              required="{{field.required}}"
+              class="field-{{field.name}}"
+            >
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

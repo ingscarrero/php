@@ -1,0 +1,26 @@
+[
+  {
+    "type": "group", "name":"inventory-add", "label":"", "order":"1", "cssClass": "size-p-100"
+    , "children": [
+      {"type":"text", "name":"name", "label":"Product Name", "required":"required", "order":"1", "cssClass": "size-p-70"}
+      ,{"type":"text", "name":"sku", "label":"SKU", "required":"", "order":"2", "cssClass": "size-p-30"}
+      ,{"type":"text", "name":"description", "label":"Description", "required":"required", "order":"3", "cssClass": "size-p-100"}
+      ,{"type":"text", "name":"notes", "label":"Supplier / Purchasing Note", "required":"", "order":"4", "cssClass": "size-p-100"}
+      ,{"type":"text", "name":"pkgQuantity", "label":"Pkg Qty", "required":"", "order":"5", "cssClass": "size-p-10"}
+      ,{"type":"select", "name":"pkgUnits", "label":"Pkg Units", "required":"required", "order":"6", "cssClass": "size-p-20", "options":[
+          {"value":"", "label":"Select"}
+          ,{"value":"1", "label":"CM"}
+          ,{"value":"2", "label":"INCHES"}
+      ]}
+      ,{"type":"text", "name":"pkgEachs", "label":"Eachs Per Pkg Units", "required":"", "order":"7", "cssClass": "size-p-20"}
+      ,{"type":"text", "name":"quantity", "label":"Quantity", "required":"required", "order":"8", "cssClass": "size-p-10"}
+      ,{"type":"select", "name":"units", "label":"Units", "required":"required", "order":"9", "cssClass": "size-p-20", "options":[
+          {"value":"", "label":"Select"}
+          ,{"value":"1", "label":"CM"}
+          ,{"value":"2", "label":"INCHES"}
+      ]}
+      ,{"type":"text", "name":"price", "label":"Unit Price", "required":"required", "order":"10", "cssClass": "size-p-10"}
+      ,{"type":"text", "name":"extended", "label":"Extended", "required":"required", "order":"11", "cssClass": "size-p-10"}
+    ]
+  }
+]

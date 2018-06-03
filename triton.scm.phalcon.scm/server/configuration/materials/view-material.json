@@ -1,0 +1,51 @@
+[
+  {
+    "type": "group", "name":"image", "label":"", "order":"1", "cssClass": ""
+    , "children": [
+      {"type":"image", "name":"image", "label":"", "order":"1", "cssClass": ""}
+    ]
+  }
+  ,{
+    "type": "group", "name":"top-right", "label":"", "order":"2", "cssClass": ""
+    , "children": [
+      {"type":"text", "name":"name", "label":"", "order":"1", "cssClass": ""}
+      ,{"type":"text", "name":"sku", "label":"", "order":"2", "cssClass": ""}
+      ,{"type":"text", "name":"description", "label":"", "order":"3", "cssClass": ""}
+    ]
+  }
+  ,{
+    "type": "group", "name":"left", "label":"", "order":"3", "cssClass": ""
+    , "children": [
+      {"type":"text", "name":"type", "label":"Type / Form", "order":"1", "cssClass": ""}
+      ,{"type":"text", "name":"category", "label":"Category / Nature", "order":"2", "cssClass": ""}
+      ,{"type":"text", "name":"inventory_account", "label":"GL Inventory Link Account", "order":"3", "cssClass": ""}
+      ,{"type":"text", "name":"income_account", "label":"GL Income Account", "order":"4", "cssClass": ""}
+      ,{"type":"text", "name":"cost_account", "label":"GL Cost of Goods Sold Account", "order":"5", "cssClass": ""}
+      ,{"type":"text", "name":"units", "label":"Base UOM", "order":"6", "cssClass": ""}
+    ]
+  }
+  ,{
+    "type": "group", "name":"center", "label":"Selling Prices for this Product", "order":"4", "cssClass": ""
+    , "children": [
+      {"type":"text", "name":"price_1", "label":"Price 1", "order":"1", "cssClass": "", "format":"currency"}
+      ,{"type":"text", "name":"price_2", "label":"Price 2", "order":"2", "cssClass": "", "format":"currency"}
+      ,{"type":"text", "name":"price_3", "label":"Price 3", "order":"3", "cssClass": "", "format":"currency"}
+      ,{"type":"text", "name":"price_4", "label":"Price 4", "order":"4", "cssClass": "", "format":"currency"}
+    ]
+  }
+  ,{
+    "type": "group", "name":"right_1", "label":"Reorder Levels: ", "order":"5", "cssClass": ""
+    , "children": [
+      {"type":"text", "name":"safety_stock", "label":"Safety Stock", "order":"1", "cssClass": ""}
+      ,{"type":"text", "name":"reorder_quantity", "label":"Reorder Quantity", "order":"2", "cssClass": ""}
+      ,{"type":"text", "name":"preferred_supplier", "label":"Preferred Supplier", "order":"3", "cssClass": ""}
+    ]
+  }
+  ,{
+    "type": "group", "name":"right_3", "label":"Inventory Balance: ", "order":"6", "cssClass": ""
+    , "children": [
+      {"type":"text", "name":"inventory_in_stock", "label":"In Stock", "order":"1", "cssClass": "", "format":"number"}
+      ,{"type":"text", "name":"inventory_available", "label":"Available", "order":"2", "cssClass": "", "format":"number"}
+    ]
+  }
+]

@@ -1,0 +1,90 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container page-return-view">
+  <div class="left-column">
+    <div class="form-field-group-container size-p-100">
+      <div class="form-field-group van-general-info">
+        <h2>{{inventoryReturn.name}}</h2>
+        <p class="highligth-text">{{inventoryReturn.date}}</p>
+        <p class="highligth-text">{{inventoryReturn.invoice}}</p>
+        <p class="highligth-text">{{inventoryReturn.po}}</p>
+        <p class="highligth-text">{{inventoryReturn.container}}</p>
+        <p class="highligth-text">{{inventoryReturn.supplier}}</p>
+        <p class="highligth-text">{{inventoryReturn.location}}</p>
+        <p class="highligth-text">{{inventoryReturn.amount | currency}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="right-column">
+    <form novalidate class="triton-form van-add-product">
+      <div class="form-field-group-container size-p-100">
+        <div class="form-field-group">
+          <div class="title">Add Product</div>
+          <div class="form-field size-p-70 field-name-cont">
+            <label for="productName">Product Name</label>
+            <input type="text" name="productName" ng-model="newProduct.name" required="required" class="field-name">
+          </div>
+          <div class="form-field size-p-30 field-sku-cont">
+            <label for="productSku">SKU</label>
+            <input type="text" name="productSku" ng-model="newProduct.sku" required="required" class="field-sku">
+          </div>
+          <div class="form-field size-p-100 field-description-cont">
+            <label for="productDescription">Description</label>
+            <input type="text" name="productDescription" ng-model="newProduct.description" required="required" class="field-description">
+          </div>
+          <div class="form-field size-p-30 field-quantity-cont">
+            <label for="productQuantity">Quantity</label>
+            <input type="text" name="productQuantity" ng-model="newProduct.quantity" required="required" class="field-quantity">
+          </div>
+          <div class="form-field size-p-30 field-cost-cont">
+            <label for="productCost">Unit Cost</label>
+            <input type="text" name="productCost" ng-model="newProduct.cost" required="required" class="field-cost">
+          </div>
+          <div class="form-field size-p-30 field-extended-cont">
+            <label for="productExtended">Extended</label>
+            <input type="text" name="productExtended" ng-model="newProduct.extended" required="required" class="field-extended">
+          </div>
+          <div class="button-container">
+            <input type="button" value="Add" id="return-add-product" class="button-orange" ng-click="addProductToReturn()">
+          </div>
+          <div class="clearfix"></div>
+          <br><br>
+          <div class="title">Returned Products</div>
+          <table class="table table-bordered table-hover table-triton">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Unit Cost</th>
+                <th>Extended</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="dataRow in inventoryReturn.inventory">
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.sku }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.name }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.quantity }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.unit_cost | currency }}</a></td>
+                <td><a href="#/inventory/view/{{dataRow.pid}}">{{ dataRow.extended | currency }}</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="totals-container">
+            <div class="subtotal">
+              <div class="totals-label">Subtotal:</div>
+              <div class="value">$1234</div>
+            </div>
+            <div class="tax">
+              <div class="totals-label">Tax:</div>
+              <div class="value">$0.00</div>
+            </div>
+            <div class="total">
+              <div class="totals-label">Total:</div>
+              <div class="value">$1234</div>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

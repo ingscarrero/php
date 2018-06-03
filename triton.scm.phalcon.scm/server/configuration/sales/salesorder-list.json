@@ -1,0 +1,12 @@
+[
+  {"name":"sales_order_number", "label":"S.O.#", "order":"1", "type":"text"}
+  ,{"name":"date", "label":"Date", "order":"2", "type":"text"}
+  ,{"name":"customer_po_number", "label":"Customer P.O. #", "order":"3", "type":"text"}
+  ,{"name":"location_n", "label":"Location", "order":"4", "type":"text"}
+  ,{"name":"billing_customer_n", "label":"Billing Customer", "order":"5", "type":"text"}
+  ,{"name":"ship_to", "label":"Type", "order":"6", "type":"text"}
+  ,{"name":"primary_sales_person_n", "label":"Sales Person", "order":"7", "type":"text"}
+  ,{"name":"status", "label":"Status", "order":"8", "type":"text"}
+  ,{"name":"total", "label":"Total", "order":"9", "type":"text"}
+  ,{"name":"action", "label":" ", "order":"10", "type":"text"}
+]

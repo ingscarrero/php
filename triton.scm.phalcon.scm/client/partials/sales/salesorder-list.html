@@ -1,0 +1,112 @@
+<!--script type="text/ng-template" id="header.html"></script-->
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+    
+    
+    <div class="form-field-group-container size-p-100 last">
+    <div class="form-field-group">
+      <!--Sidebar content-->
+      <div class="form-field size-p-20">
+        <label for="salesordernumber">Sales Order Number</label>
+        <input 
+          type="text" 
+          ng-model="salesOrderNumberFilter" 
+          name="salesordernumber"
+          ng-change="loadListPage(1)"
+        >
+      </div>
+      <div class="form-field size-p-20">
+        <label for="type">Date</label>
+        <input ng-change="loadListPage(1)" name="date"  type="text" 
+               data-date-format="dd/MM/yyyy" 
+               data-date-type="string"
+               model-date-format="yyyy-MM-dd"
+               style="min-width:180px;"   data-autoclose="0"  bs-datepicker ng-model="dateFilter"  />
+        
+      </div>
+      <div class="form-field size-p-20">
+        <label for="category">Billing Customer</label>
+         <input type="hidden" name="hidden_billing_customer_filter"  ng-model="billingCustomerFilter"   />    
+         <input type="text" ng-model="billingCustomerFilterD" id="billing_customer_filter"  name="billing_customer_filter"  class="field-billing_customer" />
+      </div>
+      <div class="form-field size-p-20">
+        <label for="group">Type</label>
+        <select 
+          ng-model="typeFilter" 
+          name="type" 
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>  
+          <option value="Pick Up" selected>Pick Up</option>
+          <option value="Delivery" >Delivery</option>
+          <option value="Other" >Other</option>
+        </select>
+      </div>
+      <div class="form-field size-p-20">
+        <label for="thickness">Sales Person</label>
+        <select 
+          ng-model="salesPersonFilter" 
+          name="thickness" 
+          ng-options="option.value as option.label for option in users"
+          ng-change="loadListPage(1)"
+        >
+          <option value="" selected>All</option>
+        </select>
+      </div>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+    
+    
+
+  <div class="form-field-group-container size-p-100 last">
+    <!-- SalesOrders Table. -->
+    <table class="table table-bordered table-hover table-triton triton-salesorder-list">
+      <thead>
+        <tr>
+          <th ng-repeat="field in tableView">{{ field.label }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="salesOrder in salesOrders | filter:query | orderBy:orderProp">
+          <td ng-repeat="field in tableView">
+              <div ng-if="field.name != 'status' && field.name != 'action'"><a href="#/salesorder/edit/{{salesOrder.soid}}" >
+              
+              {{ salesOrder[field.name] }}
+                  </a></div>
+            <div ng-if="field.name == 'status'" class="{{salesOrder.statusClass}}">
+                {{ salesOrder[field.name] }}<span ng-if="!salesOrder[field.name]">&nbsp;</span>
+           </div>
+           <div ng-if="field.name == 'action'">
+                <i class="fa fa fa-times cursor"  ng-click="deleteSalesOrder(salesOrder)"></i>
+           </div>
+          </td>
+        </tr>
+        <tr ng-show="!salesOrders.length"><td colspan="10" align="center"><div><b>No data found</b></div></td></tr>
+      </tbody>
+    </table>
+    <!-- Pager -->
+    <nav>
+      <ul class="pagination">
+        <li>
+          <a href="" aria-label="Previous" ng-click="loadListPage(pager.before)">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <!--li ng-repeat="page in pager.pages"-->
+        <li 
+          ng-repeat="i in getFixedIterator(pager.total_pages) track by $index"
+          ng-class="{active: $index+1==currentPage}"
+        >
+          <a ng-click="loadListPage($index+1)">{{ $index+1 }}</a>
+        </li>
+        <li>
+          <a href="" aria-label="Next" ng-click="loadListPage(pager.next)">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

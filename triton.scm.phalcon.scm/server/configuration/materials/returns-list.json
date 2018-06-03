@@ -1,0 +1,10 @@
+[
+  {"name":"name", "label":"Name", "order":"1", "type":"text"}
+  ,{"name":"date", "label":"Date", "order":"2", "type":"text"}
+  ,{"name":"invoice", "label":"Invoice", "order":"3", "type":"text"}
+  ,{"name":"po", "label":"PO", "order":"4", "type":"text"}
+  ,{"name":"container", "label":"Container", "order":"5", "type":"text"}
+  ,{"name":"supplier", "label":"Supplier", "order":"6", "type":"text"}
+  ,{"name":"location", "label":"Location", "order":"7", "type":"text"}
+  ,{"name":"amount", "label":"Amount", "order":"8", "type":"text"}
+]

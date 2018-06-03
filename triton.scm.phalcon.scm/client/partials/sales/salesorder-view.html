@@ -1,0 +1,41 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+    <form novalidate class="triton-form {{formClasses}}" name="salesOrderForm" id="salesOrderForm">
+        <div ng-repeat="fieldGroup in formView">
+            <div class="form-field-group-container {{fieldGroup.cssClass}}" >
+                <div class="form-field-group" >
+                    <div ng-if="fieldGroup.label" class="title">{{fieldGroup.label}}</div>
+                    <div class="form-field {{field.cssClass}} field-{{field.name}}-cont" ng-repeat="field in fieldGroup.children">
+                        <label 
+                            ng-if="field.type != 'markup'" 
+                            for="material{{field.name}}"
+                            >
+                            {{field.label}}
+                        </label>
+                        <div 
+                            ng-if="field.type == 'markup'" 
+                            class="field-{{field.name}} makereadonly"
+                            dynamic-html="{{field.content}}">
+                            
+                        </div>
+                    
+                        <textarea 
+                            ng-if="field.type == 'textarea'" 
+                            name="{{field.name}}" 
+                            ng-model="newSalesOrder[field.name]" 
+                            required="{{field.required}}"
+                            class="field-{{field.name}}"
+                            readonly
+                            ></textarea>
+                        <div ng-if="field.type == field.type != 'markup' && field.type != 'textarea' && (field.type == 'autocomplete-select' || field.type =='date' || field.type=='select' )" class="form-group" >             
+                            {{ newSalesOrder[field.name] }}
+                           
+                        
+            </div>       
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

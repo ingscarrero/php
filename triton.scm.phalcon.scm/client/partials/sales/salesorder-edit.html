@@ -1,0 +1,192 @@
+<ng-include src="navHeader.url"></ng-include>
+<div class="view-master-container">
+    <div class="left-column">
+        <div class="form-field-group-container size-p-100">
+            <div class="form-field-group">
+                <h5 class="customh5">Bill To:</h5>
+                <h2  class="customh2" >{{salesOrder.billing_customer_n}}</h2>
+                <p class="customp">
+                     <span ng-if="salesOrder.billing_phone">{{salesOrder.billing_phone}}</span><span ng-if="salesOrder.billing_email">, {{salesOrder.billing_email}}</span>
+                </p>
+                <br>
+                <h5 class="customh5">Ship to:</h5>
+                <h2  class="customh2" >{{salesOrder.ship_to_company_n}}</h2>
+                <p class="customp">
+                    <span ng-if="salesOrder.ship_to_phone">{{salesOrder.ship_to_phone}}</span><span ng-if="salesOrder.ship_to_email">, {{salesOrder.ship_to_email}}</span>
+                </p>
+                <br>
+                <br>
+                <h5 class="customh5">Delivery on: {{salesOrder.pickup_date}}</h5>
+                <h5 class="customh5">  Payment Term: {{salesOrder.payment_terms_n}}</h5>       
+
+                <br>
+
+            </div>
+        </div>
+        <div class="center-align">
+            <div class="form-field size-p-10">&nbsp;</div><div class="form-field size-p-40"><select ng-model="salesorderStatus" ng-change="updatestatus()">
+                <option>50% Fulfillment</option>
+                <option>100% Fulfillment</option>
+                <option>Closed</option>
+                </select></div>
+            <div class="form-field size-p-50"><button type="button" value="Edit" id="edit-top" class="button-top" ng-click="editSalesOrder()">Edit</button></div>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="form-field-group-container size-p-100 last">
+            <div class="form-field-group">
+                <div class="title">Products</div>
+
+
+                <div class="form-field size-p-50">
+                    <label for="product">Product Name</label>
+                    <input type="text" ng-model="searchProduct.productName"   name="productName"  class="field-product_id" />
+
+                </div>
+                <div class="form-field size-p-50">
+                    <label for="sku">Sku</label>
+                    <input type="text" name="sku" ng-model="searchProduct.sku" />
+                </div>
+
+                <div style="float:right">
+                    <input type="button" value="Search" id="search-prduct" class="button-orange" ng-click="searchProduct()">
+                </div>
+            </div>
+
+            <div ng-if="searchProduct.showResult == 'Yes'" class="clearfix">
+                <table class="table table-bordered table-hover table-triton" >
+                    <thead>
+                        <tr>
+                            <th > Name (SKU)</th>
+                            <th > Type</th>
+                            <th > Price</th>
+                            <th > </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in searchResultList| filter:query | orderBy:orderProp">
+                            <td>{{product.name}} ({{product.sku}}) </td>
+                            <td>{{product.typename}}</td>
+                            <td>{{product.price_1 | currency}}</td>
+                            <td><i class="fa fa-check cursor"  ng-click="updateSelecteProductInfo(product)"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Pager -->
+                <nav >
+                    <ul class="pagination">
+                        <li>
+                            <a href="" aria-label="Previous" ng-click="loadListPage(pager.before)">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <!--li ng-repeat="page in pager.pages"-->
+                        <li 
+                            ng-repeat="i in getFixedIterator(pager.total_pages) track by $index"
+                            ng-class="{active: $index + 1 == currentPage}"
+                            >
+                            <a ng-click="loadListPage($index + 1)">{{ $index + 1}}</a>
+                        </li>
+                        <li>
+                            <a href="" aria-label="Next" ng-click="loadListPage(pager.next)">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="clearfix"></div>
+            <br>
+            <div ng-if="searchProduct.showResult == 'Selected'" class="form-field-group">
+                <h3>{{newProduct.name}} ({{newProduct.sku}})</h3>
+                <div class="form-field size-p-50">
+                    <input type="text" name="description" id="description" ng-model="newProduct.description" placeholder="Enter Description">
+                </div>
+                <div class="form-field size-p-50">
+                    <input placeholder="Supplier / Purchasing Note" type="text" name="notes" id="note" ng-model="newProduct.notes">
+                </div>
+                <div class="form-field size-p-20">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" name="quantity" id="quantity" ng-model="newProduct.quantity">
+                </div>
+                <div class="form-field size-p-20">
+                    <label for="searchunits">Units</label>
+                    <select  name="searchunits" 
+                             ng-model="newProduct.searchunits"  >
+                        <option value="">--Select--</option>
+                        <option ng-repeat="option in dropdowndata.units" value="{{option.value}}">{{option.label}}</option>
+                    </select>
+
+                </div>
+                <div class="form-field size-p-20">
+                    <label for="unit_price">Unit Price</label>
+                    <input type="text" name="unit_price" id="unit_price" ng-model="newProduct.unit_price" size="100">
+                </div>
+                <div class="form-field size-p-20">
+                    <label for="extended">Extended</label>
+                    <input type="text" name="extended" id="extended" ng-model="newProduct.extended" size="100">
+                </div>
+                <div class="form-field size-p-20 so-checkbox-align">
+                    <label for="extended"> </label>
+                    <input type="checkbox" name="is_taxable" id="is_taxable" ng-model="newProduct.is_taxable" size="100" > <span class="so-chekcbox-inline-label">Taxable</span>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="button-container form-field size-p-25">
+                    <input type="button" value="{{saveprducttext}}" id="add-product-button" class="button-orange" ng-click="createSoProduct()">
+                </div>
+                <div class="button-container form-field size-p-25">
+                    <input type="button" value="Cancel / New Search" ng-click="cancelAndNewSearch()" id="cancel-top" class="button-top">
+                </div>
+                <div class="clearfix"></div>
+                <br>
+                <br>
+                
+                <div class="form-field-group-container size-p-33">
+                    <div class="stock-info available">Available : {{newProduct.available}}</div> 
+                </div>
+                <div class="form-field-group-container size-p-33">
+                    <div class="stock-info instock">In Stock : {{newProduct.available}}</div> 
+                </div>
+                <div class="form-field-group-container size-p-25">
+                    <div class="stock-info transit">In Transit : {{newProduct.available}}</div> 
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-field-group">
+            <div class="list-table po-prods-list-table">
+                <table class="table table-bordered table-hover table-triton" >
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th > Product (SKU)</th>
+                            <th > Description</th>
+                            <th > Qty</th>
+                            <th > UOM</th>
+                            <th > UNIT PRICE</th>
+                            <th>Extended</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in products">
+                            <td><i class="fa fa-times cursor" data-spid="{{item.spid}}" ng-click="deleteSoProduct(item.spid)"></i></td>
+                            <td><span class="cursor" ng-click="editSoProduct(item)">{{item.name}} ({{item.sku}}) </span></td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.uom}}</td>
+                            <td>{{item.unit_price | currency}}</td>
+                            <td>{{item.extended | currency}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fulfill-button-container">
+                <input type="button" value="Received Items" id="fulfill-general-button" class="button-transparent">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+

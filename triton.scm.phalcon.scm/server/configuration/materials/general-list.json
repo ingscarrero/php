@@ -1,0 +1,13 @@
+[
+  {"name":"picture", "label":"Picture", "order":"1", "type":"image"}
+  ,{"name":"name", "label":"Name", "order":"2", "type":"text"}
+  ,{"name":"sku", "label":"SKU", "order":"3", "type":"text"}
+  ,{"name":"kind", "label":"Kind", "order":"4", "type":"text"}
+  ,{"name":"type", "label":"Type/ Form", "order":"5", "type":"text"}
+  ,{"name":"category", "label":"Category", "order":"6", "type":"text"}
+  ,{"name":"subcategory", "label":"Subcategory", "order":"7", "type":"text"}
+  ,{"name":"preferred_supplier", "label":"Pref. Supplier", "order":"8", "type":"text"}
+  ,{"name":"material_group", "label":"Group", "order":"9", "type":"text"}
+  ,{"name":"inventory_availability", "label":"I.A.", "order":"10", "type":"table"}
+  ,{"name":"status", "label":"Status", "order":"11", "type":"text"}
+]
